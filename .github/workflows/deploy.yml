@@ -20,7 +20,7 @@ jobs:
       run: |
         ssh -o StrictHostKeyChecking=no $EC2_USER@$EC2_INSTANCE_IP << 'EOF'
           cd /usr/share/nginx/html/cobacicd
-          git pull origin master
+          sudo git pull origin master
           sudo systemctl restart nginx
         EOF
       env:
